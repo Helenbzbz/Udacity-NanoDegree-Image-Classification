@@ -1,0 +1,107 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 8 key-value pairs.
+Below are 8 of them:
+ 1 key:        golden_retriever_01.jpg  label:           golden retriever
+ 2 key:        golden_retriever_02.jpg  label:           golden retriever
+ 3 key:                   husky_02.jpg  label:                      husky
+ 4 key:                   husky_01.jpg  label:                      husky
+ 5 key:            water_bottle_01.jpg  label:               water bottle
+ 6 key:                  beagle_01.jpg  label:                     beagle
+ 7 key:                  beagle_02.jpg  label:                     beagle
+ 8 key:                  pigeon_01.jpg  label:                     pigeon
+
+     MATCH:
+
+       golden_retriever_01.jpg: 
+Real:           golden retriever   Classifier:               golden retriever
+
+       golden_retriever_02.jpg: 
+Real:           golden retriever   Classifier:               golden retriever
+
+                  husky_02.jpg: 
+Real:                      husky   Classifier:              eskimo dog, husky
+
+                  husky_01.jpg: 
+Real:                      husky   Classifier:              eskimo dog, husky
+
+           water_bottle_01.jpg: 
+Real:               water bottle   Classifier:                   water bottle
+
+ NOT A MATCH:
+
+                 beagle_01.jpg: 
+Real:                     beagle   Classifier:               english foxhound
+
+                 beagle_02.jpg: 
+Real:                     beagle   Classifier:               english foxhound
+
+                 pigeon_01.jpg: 
+Real:                     pigeon   Classifier:                      partridge
+
+# Total Images 8 # Matches: 5 # NOT Matches: 3
+
+     MATCH:
+
+       golden_retriever_01.jpg: 
+Real:           golden retriever   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+       golden_retriever_02.jpg: 
+Real:           golden retriever   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  husky_02.jpg: 
+Real:                      husky   Classifier:              eskimo dog, husky  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  husky_01.jpg: 
+Real:                      husky   Classifier:              eskimo dog, husky  
+PetLabelDog: 1  ClassLabelDog: 1
+
+           water_bottle_01.jpg: 
+Real:               water bottle   Classifier:                   water bottle  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                 beagle_01.jpg: 
+Real:                     beagle   Classifier:               english foxhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 beagle_02.jpg: 
+Real:                     beagle   Classifier:               english foxhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 pigeon_01.jpg: 
+Real:                     pigeon   Classifier:                      partridge  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 8 # Matches: 5 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  8  N Dog Images:  6  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  66.7
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  8  N Dog Images:  6  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  66.7
+
+**This iteration uses alexnet CNN model
+N Images: 8| N Dog Images: 6| N NotDog Images: 2
+Pct Correct Dogs: 100.0
+Pct Correct Notdogs: 100.0
+Pct Correct Breed: 66.7
+Pct Label Matches: 62.5
+
+Misclassified Dogs:
+All predictions on dog/notdog are correct
+
+Misclassified Breed's of Dog:
+Image: beagle_01.jpg  Pred Label: english foxhound
+Image: beagle_02.jpg  Pred Label: english foxhound
+
+** Total Elapsed Runtime: 0:0:0

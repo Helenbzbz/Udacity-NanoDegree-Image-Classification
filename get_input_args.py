@@ -18,7 +18,7 @@
 
 import argparse
     
-def get_input_args(dir_path):
+def get_input_args():
     """
     Retrieves and parses the 3 command line arguments provided by the user when
     they run the program from a terminal window. This function uses Python's 
@@ -36,7 +36,7 @@ def get_input_args(dir_path):
      parse_args() -data structure that stores the command line arguments object  
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dir', type=str, default = dir_path +'pet_images', help='path to folder of images')
+    parser.add_argument('--dir', type=str, default = 'pet_images', help='path to folder of images')
     parser.add_argument('--arch', type =str, default = 'vgg', help = 'which type of CNN model to deploy')
-    parser.add_argument('--dogfile', type =str , default = dir_path +'dognames.txt', help = 'path to document with dognames')
+    parser.add_argument('--dogfile', type =str , default = 'dognames.txt', help = 'path to document with dognames')
     return parser.parse_args()

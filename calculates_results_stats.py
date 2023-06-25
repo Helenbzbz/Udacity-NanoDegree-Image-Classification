@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/calculates_results_stats.py
 #                                                                             
-# PROGRAMMER:
-# DATE CREATED:                                  
+# PROGRAMMER: Helen Zheng
+# DATE CREATED: 2023/Jun/26                               
 # REVISED DATE: 
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
@@ -38,10 +38,7 @@
 #            pct_correct_notdogs - percentage of correctly classified NON-dogs
 #
 ##
-# TODO 5: Define calculates_results_stats function below, please be certain to replace None
-#       in the return statement with the results_stats_dic dictionary that you create 
-#       with this function
-# 
+
 def calculates_results_stats(results_dic):
     """
     Calculates statistics of the results of the program run using classifier's model 
@@ -69,5 +66,40 @@ def calculates_results_stats(results_dic):
                      on how to calculate the counts and statistics.
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
-    return None
+    # this function
+
+    n_images = len(results_dic) 
+    n_correct_dogs = 0
+    n_correct_breed = 0
+    n_dog_image = 0
+    n_correct_non_dogs = 0
+    n_non_dogs_image = 0
+    n_correct_breed = 0
+    n_label_match = 0
+
+    for image in results_dic:
+        if results_dic[image][3] == 1 and results_dic[image][4] == 1:
+             n_correct_dogs += 1 
+        if results_dic[image][3] == 1 and results_dic[image][2] == 1:
+             n_correct_breed +=1
+        if results_dic[image][3] == 0 and results_dic[image][4] == 0:
+             n_correct_non_dogs += 1
+        if results_dic[image][2] == 1:
+             n_label_match += 1
+
+        if results_dic[image][3] == 1:
+             n_dog_image +=1
+        else:
+             n_non_dogs_image += 1
+        
+    return {'n_images': n_images,
+            'n_dogs_img': n_dog_image,
+            'n_notdogs_img': n_non_dogs_image,
+            'n_correct_dogs': n_correct_dogs,
+            'n_correct_notdogs': n_correct_non_dogs,
+            'n_correct_breeds': n_correct_breed,
+            'n_label_matches': n_label_match,
+            'pct_correct_dogs': n_correct_dogs/n_dog_image*100, 
+            'pct_correct_notdogs': n_correct_non_dogs/n_non_dogs_image*100,
+            'pct_correct_breed': n_correct_breed/n_dog_image*100,
+            'pct_label_matches': n_label_match/n_images*100}

@@ -1,0 +1,59 @@
+## BASED ON UPLOADED_IMAGES -------------------------------------------
+
+1. Question One. Model Performance in Dog_01 breed classification
+All three Models successfully classified husky_01.jpg, golden_retriever_012.jpg, but failed to identify the breed of beagle_01.jpg
+All three models classified the beagle as english foxhound.
+
+2. Question Two. Model Performance in Dog_01 and Dog_02
+All three models gives the same prediction for Dog_01.jpg and Dog_02.jpg
+
+3. Question Three. Model Performance in Animal_01 and Object_01 (Dog/Not Dog)
+All three models correctly identify Animal_Name_01 and Object_Name_01 to be not dogs
+
+4. Best Model Evaluation
+All three models performed identically on the predictions:
+Pct Correct Dogs: 100.0
+Pct Correct Notdogs: 100.0
+Pct Correct Breed: 66.7
+Pct Label Matches: 62.5
+within the similar runtime:
+Total Elapsed Runtime: 0:0:0
+
+
+## BASED ON PET_IMAGES --------------------------------------------------
+# Total Images: 40
+# Dog Images: 30
+# Not Dog Images: 10
+
+CCN Model Architecture  Pct Correct Dogs   Pct Correct Notdogs  Pct Correct Breed  Pct Label Matches
+RestNet                 100.0               90.0                90.0                82.5                  
+Alexnet                 100.0               90.0                90.0                82.5
+VGG                     100.0               100.0               93.3                87.5
+
+RestNet
+* Misclassified Dogs:
+Image: cat_01.jpg  Pred Label: norwegian elkhound, elkhound
+* Misclassified Breed's of Dog:
+Image: Beagle_01170.jpg  Pred Label: walker hound, walker foxhound
+Image: Golden_retriever_05182.jpg  Pred Label: leonberg
+Image: Great_pyrenees_05367.jpg  Pred Label: kuvasz
+
+Alexnet 
+* Misclassified Dogs:
+All predictions on dog/notdog are correct
+* Misclassified Breed's of Dog:
+Image: Beagle_01170.jpg  Pred Label: walker hound, walker foxhound
+Image: Boston_terrier_02285.jpg  Pred Label: basenji
+Image: Beagle_01141.jpg  Pred Label: english foxhound
+Image: Golden_retriever_05182.jpg  Pred Label: tibetan mastiff
+Image: Great_pyrenees_05367.jpg  Pred Label: kuvasz
+Image: Golden_retriever_05257.jpg  Pred Label: afghan hound, afghan
+
+VGG 
+* Misclassified Dogs:
+All predictions on dog/notdog are correct
+* Misclassified Breed's of Dog:
+Image: Beagle_01170.jpg  Pred Label: walker hound, walker foxhound
+Image: Great_pyrenees_05367.jpg  Pred Label: kuvasz
+
+Overvall, VGG and Alexnet were able to classify Dog/Not-Dog 100% coreect, while VGG is the most accurate on breed classification.
